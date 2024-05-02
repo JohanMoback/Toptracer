@@ -1,0 +1,20 @@
+name: deploy-mongodb
+
+on:
+  push:
+    branches:
+      - feature/*
+      - staging
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Build API Docker image
+      run: |
+        docker build -t api-image ./mongodb

@@ -1,0 +1,4 @@
+FROM mongo:latest
+
+# Expose port 27017 (MongoDB default port)
+EXPOSE 27017
